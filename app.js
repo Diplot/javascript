@@ -26,32 +26,35 @@ function test6() {
 function test7() {
 console.log(confirm('Все правильно сделал? ☺ '));
 };
+
 function test8(){
-let t = + prompt("Введите число от 0 до 10");
-    console.log(t);
+var t = + prompt("Введите число от 0 до 10");
     (t>=0 && t<10)? t=+t:alert('Ну написано же \"Введите число...\", читать не умеем?');
-    for( let i= t; i<10; i++){
+    for( var i= t; i<10; i++){
         for ( var j =0;j<=10;j++){
             if ((i*j)==0) continue;
-            console.log('\|' + i + ' * ' + j+' = '+ (i*j) +'\|' );
-            let div = document.createElement('div');
-            div.innerHTML = ('\|' + i + ' * ' + j+' = '+ (i*j) +'\|');
+            var div = document.createElement('div');
+            div.className = 'king';
+            div.innerHTML = ('\|' + i + ' * ' + j +' = '+ (i*j) +'\|');
             document.body.append(div);
             switch(j){
                 case 10: {
-                    let p = document.createElement('p');
+                    var p = document.createElement('p');
+                    p.className = 'king';
                     p.innerHTML = '---------------';
                     document.body.append(p);
                 }
                     break;
                 case 1: {
-                    let p = document.createElement('p');
+                    var p = document.createElement('p');
+                    p.className = 'king';
                     p.innerHTML = '-----------';
                     document.body.append(p);
                 }
                     break;
                 default:{
-                    let p = document.createElement('p');
+                    var p = document.createElement('p');
+                    p.className = 'king';
                     p.innerHTML = '-------------';
                     document.body.append(p);
                 }
@@ -60,5 +63,69 @@ let t = + prompt("Введите число от 0 до 10");
             }
         }
     }
+
+}
+function test9() {
+    for (let elem = document.querySelector('.king'); elem !== null; elem = document.querySelector('.king')) {
+        elem.remove();
+    }
+    // for (var p = document.querySelector('.king'); p != null; p = document.querySelector('p'))
+    // {
+    //     p.remove();
+    // }
+    // ;
+
 }
 
+function test10() {
+    let text = prompt('Каково \"официальное\" название JavaScript?');
+    if (text == 'ECMAScript') alert('Верно!')
+    else alert('Не знаете? \"ECMAScript\"!')
+}
+function test11() {
+    let i = + prompt("Введите число");
+    console.log(typeof i)
+    if ( i > 0) {
+        alert('1');
+    }
+    else if (i < 0) {
+        alert('-1');
+        ;
+    }
+    else
+    {
+        alert('0');
+    }
+}
+function test12() {
+    let text = prompt('Кто пришел?');
+    console.log(text);
+    if (text === 'Admin'){
+            let pass = prompt('Введите пароль:');
+        if (pass==='Чёрный Властелин') { alert('Добро пожаловать!')}
+        else if (pass == null) {alert('Вход отменен')}
+        else {alert('Пароль неправильный')}
+        }
+    else if (text == null) {alert('Вход отменен')}
+    else {alert('Я Вас не знаю!')}
+}
+function test13() {
+    var i = 0
+    while(i<3){
+        console.log(i);
+        alert('номер ' + i + ' !');
+        i++;
+    }
+}
+function test14() {
+
+   do {
+         var text = prompt('Введите число больше 100: ');
+         if (text == null) {
+                alert('Вход отменен');
+                break;
+        }
+    }
+    while (text < 100);
+
+}
