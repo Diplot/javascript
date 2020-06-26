@@ -5,10 +5,35 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
     <title>Document</title>
 </head>
+<style>
+    .album__photos img{
+        width: 200px;
+        height: 200px;
+
+        display: none;
+        border: 1px red solid;
+    }
+    #photo-1{
+        display: block;
+        background-color: red;
+    }
+    #photo-2{
+        background-color: blueviolet;
+    }
+    #photo-3{
+        background-color: blue;
+    }
+    #photo-4{
+        background-color: gold;
+    }
+    #photo-5{
+        background-color: green;
+    }
+</style>
 <body>
 <section>
     <button onclick="test1()">Строка</button>
@@ -28,8 +53,23 @@
     <button onclick="test13()"> Задание №4 </button>
     <button onclick="test14()"> Задание №5 </button>
 </section>
-
+<section>
+    <button id="listen">слушатель</button>
+</section>
+<section class="album">
+    <div class="album__photos">
+        <img src="#" alt="1" id="photo-1">
+        <img src="#" alt="2" id="photo-2">
+        <img src="#" alt="3" id="photo-3">
+        <img src="#" alt="4" id="photo-4">
+        <img src="#" alt="5" id="photo-5">
+    </div>
+    <button id="prev">Назад</button>
+    <button id="next">Вперед</button>
+</section>
 <div id="div"></div>
 <div id="p"></div>
+<script src="app.js"></script>
+
 </body>
 </html>
