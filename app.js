@@ -166,5 +166,37 @@ $(function () {
     })
 })
 
+/*03.07*/
+function  discountPrices(price,discount) {
+    let discounted = [];
+    for ( let i = 0 ; i<price.length; i++){
+        let discountedPrice = price[i] * (1-discount);
+        let finalPrice= (discountedPrice *100)/100
+        discounted.push(finalPrice)
+    }
+return discounted;
 
+}
+console.log(discountPrices([214,1241,124,124,235325,213],.3))
+let setCar = document.querySelector('#car');
 
+const fetchFunc = ()=>{
+    fetch('data.json',{method:'GET'})
+        .then(response => response.json())
+        .then(json => {
+            json.car.map( n => {
+                    let option = document.createElement('option');
+                    option.innerHTML = n;
+                    setCar.append(option)
+                })
+        })
+}
+fetchFunc();
+
+function tablePif() {
+    let arrX = [1,2,3,4,5,6,7,8,9,10];
+    for (let i=0;i<10;i++){
+        console.log(arrX.map(n=>n*(i+1)))
+    }
+}
+tablePif()
