@@ -178,6 +178,9 @@ return discounted;
 
 }
 console.log(discountPrices([214,1241,124,124,235325,213],.3))
+
+
+/*дз от 10.07*/
 let setCar = document.querySelector('#car');
 
 const fetchFunc = ()=>{
@@ -193,10 +196,10 @@ const fetchFunc = ()=>{
 }
 fetchFunc();
 
-function tablePif() {
+function table() {
     let arrX = [1,2,3,4,5,6,7,8,9,10];
     for (let i=0;i<10;i++){
-        console.log(arrX.map(n=>n*(i+1)))
+        console.log(arrX.map(n=>n * (i + 1)))
     }
 }
-tablePif()
+table()
